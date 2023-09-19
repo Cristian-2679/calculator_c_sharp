@@ -9,3 +9,5 @@ lo scopo del progetto **calculator** è creare una calcolatrice basica che imiti
 - 13 september 2023 - continue working
   - preso confidenza con i comandi
   - testando opzioni nell'editing del readme
+- 19 september 2023 - continue working
+  - iniziamo a codificare
