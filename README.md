@@ -13,3 +13,5 @@ lo scopo del progetto **calculator** è creare una calcolatrice basica che imiti
   - iniziamo a codificare
   - il tema della calcolatrice ora è unown e le rovine d'Alfa
   - imminent first release
+- 20 september 2023 - first release
+  - now there is the first release ( only + - * / works)
