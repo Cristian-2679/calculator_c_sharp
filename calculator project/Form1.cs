@@ -21,6 +21,7 @@ namespace calculator_project
         private void Form1_Load(object sender, EventArgs e)
         {
             makebuttons();
+            label2.Text = "";
         }
 
         public struct btnStruct
@@ -81,7 +82,7 @@ namespace calculator_project
                 }
             }
         }
-
+        static bool fase= false;
         private void Mybutton_Click(object sender, EventArgs e)
         {
             Button h = (Button)sender;
@@ -120,9 +121,12 @@ namespace calculator_project
                     label1.Text += "0";
                     break;
                 case "CE":
-                    label1.Text = "";
+                    label1.Text = "0";
                     break;
                 case "C":
+                    label1.Text = "";
+                    label2.Text = "";
+                    fase = false;
                     break;
                 case "%":
                     break;
@@ -134,25 +138,43 @@ namespace calculator_project
                     break;
                 case "x²":
                     label1.Text += "²";
+                    end();
                     break;
                 case "²√x":
                     label1.Text = "√" + label1.Text;
+                    end();
                     break;
                 case "1/x":
                     label1.Text = "1/" + label1.Text;
+                    end();
                     break;
                 case "/":
-                    label1.Text += "/";
-                    //Next();
+                    if (fase == false)
+                    {
+                        label1.Text += "/";
+                        Next();
+                    }
                     break;
                 case "*":
-                    label1.Text += "*";
+                    if (fase == false)
+                    {
+                        label1.Text += "*";
+                        Next();
+                    }
                     break;
                 case "+":
-                    label1.Text += "+";
+                    if (fase == false)
+                    {
+                        label1.Text += "+";
+                        Next();
+                    }
                     break;
                 case "-":
-                    label1.Text += "-";
+                    if (fase == false)
+                    {
+                        label1.Text += "-";
+                        Next();
+                    }
                     break;
                 case "+/-":
                     if (label1.Text[0] == '+')
@@ -179,6 +201,7 @@ namespace calculator_project
                     }
                     break;
                 case "=":
+                    end();
                     break;
             }
             if (label1.Text.Length > 1 && label1.Text[0] == '0' && label1.Text[1] != ',')
@@ -187,9 +210,42 @@ namespace calculator_project
             }
         }
 
+        private void end()
+        {
+            if (fase)
+            {
+                double n1 = Convert.ToDouble(label2.Text.Remove(label2.Text.Length - 1));
+                double n2 = Convert.ToDouble(label1.Text);
+                char op = label2.Text[label2.Text.Length - 1];
+                //MessageBox.Show(n1 + "()" + n2 + "[]" + op);
+                switch (op)
+                {
+                    case '-':
+                        label1.Text = (n1 - n2).ToString();
+                        break;
+                    case '+':
+                        label1.Text = (n1 + n2).ToString();
+                        break;
+                    case '*':
+                        label1.Text = (n1 * n2).ToString();
+                        break;
+                    case '/':
+                        label1.Text = (n1 / n2).ToString();
+                        break;
+                }
+                label2.Text += n2;
+            }
+            else
+            {
+
+            }
+        }
+
         private void Next()
         {
-            throw new NotImplementedException();
+            label2.Text = label1.Text;
+            label1.Text = "";
+            fase = true;
         }
     }
 }
