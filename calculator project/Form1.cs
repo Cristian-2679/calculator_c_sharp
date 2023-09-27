@@ -8,7 +8,7 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Windows.Forms; 
 
 namespace calculator_project
 {
@@ -213,7 +213,7 @@ namespace calculator_project
             {
                 label1.Text = label1.Text.Substring(1);
             }
-            string strout;
+            //string strout;
             /*if (label1.Text.Length > 0)
             {
                 double num = double.Parse(label1.Text);
@@ -250,7 +250,7 @@ namespace calculator_project
 
         private void end(int operation)
         {
-            if (fase)
+            if (fase && label2.Text.Length > 1)
             {
                 double n1 = Convert.ToDouble(label2.Text.Remove(label2.Text.Length - 1));
                 double n2 = Convert.ToDouble(label1.Text);
@@ -268,7 +268,15 @@ namespace calculator_project
                         label1.Text = (n1 * n2).ToString();
                         break;
                     case '/':
-                        label1.Text = (n1 / n2).ToString();
+                        if (n2 == 0)
+                        {
+                            label2.Text = /*"ERROR */"DIV FOR 0";
+                            label1.Text = "0";
+                        }
+                        else
+                        {
+                            label1.Text = (n1 / n2).ToString();
+                        }
                         break;
                 }
                 label2.Text += n2;
@@ -278,12 +286,45 @@ namespace calculator_project
                 switch (operation)
                 {
                     case 0:
+                        label2.Text = "";
+                        label2.Text = label1.Text;
                         break;
                     case 1:
+                        label2.Text = label1.Text;
+                        string value = label1.Text.Remove(label1.Text.Length - 1);
+                        int number = Convert.ToInt32(value);
+                        number = number * number;
+                        label1.Text = number.ToString();
                         break;
                     case 2:
+                        string valuererer=label1.Text.Substring(1);
+                        double numbererer=Convert.ToDouble(valuererer);
+                        if (numbererer >= 0)
+                        {
+                            label2.Text = label1.Text;
+                            numbererer=Math.Sqrt(numbererer);
+                            label1.Text=numbererer.ToString();
+                        }
+                        else
+                        {
+                            label2.Text = /*"ERROR */"NUMBER < 0";
+                            label1.Text = "0";
+                        }
                         break;
                     case 3:
+                        label2.Text = label1.Text;
+                        string valuer = label1.Text.Substring(2);
+                        double numberer = Convert.ToInt32(valuer);
+                        if(numberer == 0)
+                        {
+                            label2.Text = /*"ERROR */"DIV FOR 0";
+                            label1.Text = "0";
+                        }
+                        else
+                        {
+                            numberer = 1 / numberer;
+                            label1.Text = numberer.ToString();
+                        }
                         break;
                 }
             }
