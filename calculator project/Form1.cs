@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
@@ -129,6 +130,7 @@ namespace calculator_project
                     fase = false;
                     break;
                 case "%":
+                    label1.Text += "%";
                     break;
                 case "<X|":
                     if(label1.Text.Length > 0) 
@@ -138,15 +140,18 @@ namespace calculator_project
                     break;
                 case "x²":
                     label1.Text += "²";
-                    end();
+                    fase = false;
+                    end(1);
                     break;
                 case "²√x":
                     label1.Text = "√" + label1.Text;
-                    end();
+                    fase = false;
+                    end(2);
                     break;
                 case "1/x":
                     label1.Text = "1/" + label1.Text;
-                    end();
+                    fase = false;
+                    end(3);
                     break;
                 case "/":
                     if (fase == false)
@@ -201,16 +206,49 @@ namespace calculator_project
                     }
                     break;
                 case "=":
-                    end();
+                    end(0);
                     break;
             }
-            if (label1.Text.Length > 1 && label1.Text[0] == '0' && label1.Text[1] != ',')
+            if (label1.Text.Length > 1 && label1.Text[0] == '0' && label1.Text[1] != ',' && label1.Text[1] != '%' && label1.Text[1] != '²')
             {
                 label1.Text = label1.Text.Substring(1);
             }
+            string strout;
+            /*if (label1.Text.Length > 0)
+            {
+                double num = double.Parse(label1.Text);
+                strout=num.ToString("#,##0.################");
+                label1.Text=strout;
+            }*/
+            if(label1.Text.Length > 8 && ((label1.Text.Length - 8) * (21/8)) >= 40)
+            {
+                float delta = (label1.Text.Length - 8);
+                float v1 = 48;
+                float v2 = 21/8;
+                float val = v1 - (delta * v2);
+                if (val > 0)
+                {
+                    label1.Font = new Font("Jokerman", val , FontStyle.Regular);
+                }
+                else
+                {
+                    label1.Font = new Font("Jokerman", 21, FontStyle.Regular);
+                }
+            }
+            else
+            {
+                if(label1.Text.Length < 8)
+                {
+                    label1.Font = new Font("Jokerman", 48, FontStyle.Regular);
+                }
+                else
+                {
+                    label1.Font = new Font("Jokerman", 21, FontStyle.Regular);
+                }
+            }
         }
 
-        private void end()
+        private void end(int operation)
         {
             if (fase)
             {
@@ -237,8 +275,19 @@ namespace calculator_project
             }
             else
             {
-
+                switch (operation)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                }
             }
+            fase = !fase;
         }
 
         private void Next()

@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,6 +44,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(421, 72);
             this.panel1.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoEllipsis = true;
+            this.label2.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.label2.Font = new System.Drawing.Font("Unown", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Orange;
+            this.label2.Image = global::calculator_project.Properties.Resources.FCEw1bYWUAQfIjs;
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.label2.Location = new System.Drawing.Point(260, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(161, 37);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "label2";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label1
             // 
@@ -59,20 +74,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "0";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label2
-            // 
-            this.label2.AutoEllipsis = true;
-            this.label2.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.label2.Font = new System.Drawing.Font("Unown", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Orange;
-            this.label2.Image = global::calculator_project.Properties.Resources.FCEw1bYWUAQfIjs;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label2.Location = new System.Drawing.Point(260, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(161, 37);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "label2";
             // 
             // Form1
             // 
