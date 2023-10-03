@@ -37,12 +37,13 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackgroundImage = global::calculator_project.Properties.Resources.FCEw1bYWUAQfIjs;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(-52, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(421, 72);
+            this.panel1.Size = new System.Drawing.Size(473, 72);
             this.panel1.TabIndex = 1;
             // 
             // label2
@@ -53,9 +54,9 @@
             this.label2.ForeColor = System.Drawing.Color.Orange;
             this.label2.Image = global::calculator_project.Properties.Resources.FCEw1bYWUAQfIjs;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label2.Location = new System.Drawing.Point(260, 35);
+            this.label2.Location = new System.Drawing.Point(285, 35);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(161, 37);
+            this.label2.Size = new System.Drawing.Size(185, 37);
             this.label2.TabIndex = 0;
             this.label2.Text = "label2";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;

@@ -220,15 +220,15 @@ namespace calculator_project
                 strout=num.ToString("#,##0.################");
                 label1.Text=strout;
             }*/
-            if(label1.Text.Length > 8 && ((label1.Text.Length - 8) * (21/8)) >= 40)
+            if (label1.Text.Length > 8 && ((label1.Text.Length - 8) * (21 / 8)) >= 40)
             {
                 float delta = (label1.Text.Length - 8);
                 float v1 = 48;
-                float v2 = 21/8;
+                float v2 = 21 / 8;
                 float val = v1 - (delta * v2);
                 if (val > 0)
                 {
-                    label1.Font = new Font("Jokerman", val , FontStyle.Regular);
+                    label1.Font = new Font("Jokerman", val, FontStyle.Regular);
                 }
                 else
                 {
@@ -237,7 +237,7 @@ namespace calculator_project
             }
             else
             {
-                if(label1.Text.Length < 8)
+                if (label1.Text.Length < 8)
                 {
                     label1.Font = new Font("Jokerman", 48, FontStyle.Regular);
                 }
@@ -328,13 +328,13 @@ namespace calculator_project
                         break;
                 }
             }
-            fase = !fase;
+            fase = false;
         }
 
         private void Next()
         {
             label2.Text = label1.Text;
-            label1.Text = "";
+            label1.Text = "0";
             fase = true;
         }
     }
