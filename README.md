@@ -14,4 +14,11 @@ lo scopo del progetto **calculator** è creare una calcolatrice basica che imiti
   - il tema della calcolatrice ora è unown e le rovine d'Alfa
   - imminent first release
 - 20 september 2023 - first release
-  - now there is the first release ( only + - * / works)
+  - now there is the first release ( only + - * / works)(i call this the beta)
+- 27 september 2023 - continue working
+  - aggiunta radice, quadrato ecc.
+- 3 october 2023 - continue working
+  - minor bugfix.
+- 4 october 2023 - continue working
+  - % now working
+  - we can call this the second release(i call it 1.0)
