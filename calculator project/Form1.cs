@@ -130,7 +130,11 @@ namespace calculator_project
                     fase = false;
                     break;
                 case "%":
-                    label1.Text += "%";
+                    if (fase = true && label1.Text[label1.Text.Length - 1] <= '9' && label1.Text[label1.Text.Length - 1] >= '0')
+                    {
+                        label1.Text += "%";
+                        end(4);
+                    }
                     break;
                 case "<X|":
                     if(label1.Text.Length > 0) 
@@ -253,7 +257,18 @@ namespace calculator_project
             if (fase && label2.Text.Length > 1)
             {
                 double n1 = Convert.ToDouble(label2.Text.Remove(label2.Text.Length - 1));
-                double n2 = Convert.ToDouble(label1.Text);
+                double n2;
+                if(operation == 4)
+                {
+                    string lbl=label1.Text.Remove(label1.Text.Length - 1);
+                    double n=Convert.ToDouble(lbl);
+                    n2 = n1 / 100;
+                    n2 = n2 * n;
+                }
+                else
+                {
+                    n2 = Convert.ToDouble(label1.Text);
+                }
                 char op = label2.Text[label2.Text.Length - 1];
                 //MessageBox.Show(n1 + "()" + n2 + "[]" + op);
                 switch (op)
