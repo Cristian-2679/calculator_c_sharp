@@ -307,7 +307,7 @@ namespace calculator_project
                     case 1:
                         label2.Text = label1.Text;
                         string value = label1.Text.Remove(label1.Text.Length - 1);
-                        int number = Convert.ToInt32(value);
+                        double number = Convert.ToDouble(value);
                         number = number * number;
                         label1.Text = number.ToString();
                         break;
@@ -322,14 +322,14 @@ namespace calculator_project
                         }
                         else
                         {
-                            label2.Text = /*"ERROR */"NUMBER < 0";
+                            label2.Text = /*"ERROR */"NUM"/*BER*/+" < 0";
                             label1.Text = "0";
                         }
                         break;
                     case 3:
                         label2.Text = label1.Text;
                         string valuer = label1.Text.Substring(2);
-                        double numberer = Convert.ToInt32(valuer);
+                        double numberer = Convert.ToDouble(valuer);
                         if(numberer == 0)
                         {
                             label2.Text = /*"ERROR */"DIV FOR 0";
