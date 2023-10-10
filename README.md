@@ -22,3 +22,5 @@ lo scopo del progetto **calculator** è creare una calcolatrice basica che imiti
 - 4 october 2023 - continue working
   - % now working
   - we can call this the second release(i call it 1.0)
+- 10 october 2023 - continue working
+  - minor bugfix
